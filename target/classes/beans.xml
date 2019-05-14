@@ -4,12 +4,21 @@
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean name="movie1, movie2" class="com.stackroute.domain.Movie">
+    <bean id="movie1" autowire="byName" class="com.stackroute.domain.Movie">
+<!--
         <constructor-arg ref="actor2"/>
+-->
     </bean>
-    <!--<bean id="movie2" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean id="movie2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype">
+        <!--
+                <constructor-arg ref="actor2"/>
+        -->
+    </bean>
+    <bean id="movie3" autowire="byType" class="com.stackroute.domain.Movie" scope="prototype">
+<!--
         <constructor-arg ref="actor2"/>
-    </bean>-->
+-->
+    </bean>
     <bean id="actor0" class="com.stackroute.domain.Actor" scope="prototype">
         <constructor-arg name="actorName" value="Vicky Kaushal"/>
         <constructor-arg name="actorGender" value="Male"/>
@@ -20,7 +29,7 @@
         <constructor-arg index="1" value="Male"/>
         <constructor-arg index="2" value="11"/>
     </bean>
-    <bean id="actor2" class="com.stackroute.domain.Actor" scope="prototype">
+    <bean id="actor" class="com.stackroute.domain.Actor" scope="prototype">
         <constructor-arg type="java.lang.String" value="Fahad Fasil"/>
         <constructor-arg type="java.lang.String" value="Male"/>
         <constructor-arg type="int" value="15"/>
