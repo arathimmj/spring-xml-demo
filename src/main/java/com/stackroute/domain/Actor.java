@@ -2,7 +2,7 @@ package com.stackroute.domain;
 
 public class Actor {
 
-    public Actor(String actorName, String actorGender, String actorAge) {
+    public Actor(String actorName, String actorGender, int actorAge) {
         this.actorName = actorName;
         this.actorGender = actorGender;
         this.actorAge = actorAge;
@@ -27,17 +27,17 @@ public class Actor {
         this.actorGender = actorGender;
     }
 
-    public String getActorAge() {
+    public int getActorAge() {
         return actorAge;
     }
 
-    public void setActorAge(String actorAge) {
+    public void setActorAge(int actorAge) {
         this.actorAge = actorAge;
     }
 
     private String actorName;
     private String actorGender;
-    private String actorAge;
+    private int actorAge;
 
 
 
