@@ -5,19 +5,13 @@
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean id="movie1" autowire="byName" class="com.stackroute.domain.Movie">
-<!--
-        <constructor-arg ref="actor2"/>
--->
+
     </bean>
     <bean id="movie2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype">
-        <!--
-                <constructor-arg ref="actor2"/>
-        -->
+
     </bean>
     <bean id="movie3" autowire="byType" class="com.stackroute.domain.Movie" scope="prototype">
-<!--
-        <constructor-arg ref="actor2"/>
--->
+
     </bean>
     <bean id="actor0" class="com.stackroute.domain.Actor" scope="prototype">
         <constructor-arg name="actorName" value="Vicky Kaushal"/>
