@@ -7,14 +7,14 @@ public class BeanPostProcessorDemoBean implements BeanPostProcessor {
 
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException
     {
-        System.out.println("In post process "+beanName);
-        return beanName;
+        System.out.println("In post process before initialisation: "+beanName);
+        return bean;
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException
     {
-        System.out.println("In post process "+beanName);
-        return beanName;
+        System.out.println("In post process after initialisation: "+beanName);
+        return bean;
     }
 
 }

@@ -7,17 +7,17 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
+public class Movie {
 
     private Actor actor;
-    ApplicationContext applicationContext = null;
-    BeanFactory beanFactory = null;
-    String beanName = null;
+//    ApplicationContext applicationContext = null;
+//    BeanFactory beanFactory = null;
+//    String beanName = null;
 
 
-    public ApplicationContext getApplicationContext() {
-        return applicationContext;
-    }
+//    public ApplicationContext getApplicationContext() {
+//        return applicationContext;
+//    }
 
 
     public Movie() {
@@ -35,19 +35,19 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         this.actor = actor;
     }
 
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-        Actor actor = (Actor) applicationContext.getBean("actor");
-        System.out.println("Inside Application Context");
-    }
-
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.beanFactory = beanFactory;
-        System.out.println("Inside Bean Factory"+this.beanFactory);
-    }
-
-    public void setBeanName(String s) {
-        this.beanName = s;
-        System.out.println("Inside bean name"+this.beanName);
-    }
+//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+//        this.applicationContext = applicationContext;
+//        Actor actor = (Actor) applicationContext.getBean("actor");
+//        System.out.println("Inside Application Context");
+//    }
+//
+//    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+//        this.beanFactory = beanFactory;
+//        System.out.println("Inside Bean Factory"+this.beanFactory);
+//    }
+//
+//    public void setBeanName(String s) {
+//        this.beanName = s;
+//        System.out.println("Inside bean name"+this.beanName);
+//    }
 }
