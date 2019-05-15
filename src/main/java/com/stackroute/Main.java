@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
@@ -18,8 +20,11 @@ public class Main {
 
         Movie movies;
 
-        ApplicationContext context=
+        ConfigurableApplicationContext context=
                 new ClassPathXmlApplicationContext("beans.xml");
+
+       /* ConfigurableApplicationContext context =
+                new ClassPathXmlApplicationContext(new String[] {"Spring-Customer.xml"});*/
 
         System.out.println("Using autowired name");
         Movie movie = (Movie) context.getBean("movie1");
@@ -30,6 +35,8 @@ public class Main {
         Movie movie2 = (Movie) context.getBean("movie2");
         System.out.println("Actor Name:\t"+movie2.getActor().getActorName()+"\nActor Gender:\t"+movie2.getActor().getActorGender()+"\nActor Age:\t"+movie2.getActor().getActorAge()+"\n");
         System.out.println();
+
+        BeanLifecycleDemoBean beanLifecycleDemoBean = (BeanLifecycleDemoBean)context.getBean("lifeCycle");
 
         /*System.out.println("Using autowired type");
         Movie movie3 = (Movie) context.getBean("movie3");

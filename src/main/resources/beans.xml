@@ -10,6 +10,9 @@
     <bean id="movie2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype">
 
     </bean>
+    <bean id="lifeCycle" class="com.stackroute.demo.BeanLifecycleDemoBean">
+
+    </bean>
     <bean id="movie3" autowire="byType" class="com.stackroute.domain.Movie" scope="prototype">
 
     </bean>

@@ -38,7 +38,7 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
         Actor actor = (Actor) applicationContext.getBean("actor");
-        System.out.println("Inside Application Context"+actor.getActorName());
+        System.out.println("Inside Application Context");
     }
 
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
