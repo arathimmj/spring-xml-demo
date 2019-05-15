@@ -20,7 +20,7 @@ public class Main {
 
         Movie movies;
 
-        ConfigurableApplicationContext context=
+        ApplicationContext context=
                 new ClassPathXmlApplicationContext("beans.xml");
 
        /* ConfigurableApplicationContext context =

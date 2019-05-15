@@ -4,7 +4,9 @@
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean id="movie1" autowire="byName" class="com.stackroute.domain.Movie">
+<!--    <bean id="postProcessor" class="com.stackroute.demo.BeanPostProcessorDemoBean" />-->
+
+    <bean id="movie1" autowire="byName" class="com.stackroute.domain.Movie" init-method="customInit" destroy-method="customDestroy">
 
     </bean>
     <bean id="movie2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype">
@@ -13,6 +15,7 @@
     <bean id="lifeCycle" class="com.stackroute.demo.BeanLifecycleDemoBean">
 
     </bean>
+
     <bean id="movie3" autowire="byType" class="com.stackroute.domain.Movie" scope="prototype">
 
     </bean>
@@ -31,4 +34,5 @@
         <constructor-arg type="java.lang.String" value="Male"/>
         <constructor-arg type="int" value="15"/>
     </bean>
+
 </beans>
